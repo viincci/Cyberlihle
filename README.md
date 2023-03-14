@@ -1,9 +1,7 @@
-"# redesigned-funicular" 
-#Flask OpenAI Chatbot Webhook
-
+ <h1>Flask OpenAI Chatbot Webhook</h1>
 This is a Flask web application that serves as a webhook for a chatbot, using OpenAI's text completion API to generate responses to user input.
 
-##Getting Started
+<h2>Getting Started</h2>
 
 To use this application, you will need an OpenAI API key, which can be obtained from the OpenAI website. Once you have your API key, you can set it as an environment variable in your terminal:
 
@@ -20,7 +18,7 @@ After installing the required packages, you can start the Flask application by r
     python app.py
 
 The application will start running on http://localhost:8000 by default.
-##Usage
+<h2>Usage</h2>
 
 To use the chatbot webhook, you can send a POST request to the /webhook endpoint with a JSON payload containing the user's input text. The payload should have the following format:
 
@@ -40,7 +38,7 @@ json
     }
 
 If an error occurs during processing, the application will return a random witty response in the fulfillmentText field.
-##Configuration
+<h2>Configuration</h2>
 
 The application uses environment variables to store configuration settings. The following variables can be set:
 
@@ -49,7 +47,7 @@ The application uses environment variables to store configuration settings. The 
     CEO_PROFILE: A profile of the CEO to use in the prompt template. Default is an empty string.
     PROMPT_TEMPLATE: The prompt template to use for generating responses. Default is a generic template with placeholders for the company description and CEO profile.
 
-##Customization
+<h2>Customization</h2>
 
 To customize the chatbot's behavior, you can modify the following settings in the app.py file:
 
@@ -61,6 +59,6 @@ To customize the chatbot's behavior, you can modify the following settings in th
     presence_penalty: The presence penalty to use for text generation. Default is 0.6.
     stop: The stop sequence to use for text generation. Default is ["Human:", " AI:"].
 
-##License
+<h2>License</h2>
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
