@@ -1,5 +1,4 @@
-Flask==2.2.3
-Flask_Caching==2.0.2
-flask_logging==0.1.3
-openai==0.27.0
-python-dotenv==1.0.0
+Flask
+Flask_Caching
+openai
+python-dotenv
