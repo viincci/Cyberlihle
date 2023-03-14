@@ -1,6 +1,5 @@
-Flask
+Flask[async]
 Flask_Caching
 openai
 python-dotenv
 gunicorn
-Flask[async]
