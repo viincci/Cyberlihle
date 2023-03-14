@@ -2,3 +2,4 @@ Flask
 Flask_Caching
 openai
 python-dotenv
+gunicorn
