@@ -27,26 +27,21 @@ Continuously monitor and improve the chatbot's performance by analyzing user fee
 
 **Adding Intents from Previous Convesations**
 
-Step 1: Analyze the conversations
+1. Login to Dialogflow: Log in to your Dialogflow account and navigate to the "Training" tab in the left-hand menu.
 
-Before adding new intents, take some time to analyze the previous conversations. Look for patterns, common phrases or questions, and topics that come up frequently. This will help you identify which intents need to be added or updated.
+2. Select Conversation: Choose a conversation from the list of conversations that you want to use to train your agent.
 
-Step 2: Create new intents
+3. Identify Unmatched Intents: Look for instances in the conversation where the user's intent was not matched by the agent. These unmatched intents can be identified by looking for the user's messages that were not understood by the agent or were incorrectly matched to a different intent.
 
-Based on the analysis of the previous conversations, create new intents for the topics that were not covered by existing intents. You can do this by clicking the "Create Intent" button and giving it a name that reflects the topic it covers.
+4. Create New Intents: To add these unmatched intents to your agent, create new intents in Dialogflow. You can do this by clicking the "Add Intent" button below the list of intents in the "Intents" section of Dialogflow. Give each new intent a name that reflects the user's intent, and provide sample phrases that the user might say to trigger the intent.
 
-Step 3: Add training phrases and responses
+5. Repeat for Other Unmatched Intents: Repeat steps 3 and 4 for all the other unmatched intents in the conversation. If there are multiple conversations you want to use to train your agent, repeat these steps for each conversation.
 
-Once you have created a new intent, add training phrases and responses that match the way people naturally talk about the topic. Use the actual language from the previous conversations as much as possible. You can also use the "Add Examples" button to add more training phrases.
+6. Train the Model: Once you have added all the new intents to your agent, train the model by clicking the "Train" button in the upper-right corner of Dialogflow. This will update the agent's machine learning model with the new training data you have provided.
 
-Step 4: Test the new intents
+7. Test the Results: After training the model, test the results by chatting with the agent using the sample phrases you provided for each intent. If the agent is correctly recognizing and responding to each intent, you have successfully trained the agent using previous conversations.
 
-After adding new intents, test them to make sure they work as expected. You can do this by using the "Try it now" feature in the intent editor, or by testing the agent in the Dialogflow console.
+8. After adding new intents and testing them, train the model by clicking the "Train" button in the Dialogflow console. This will update the agent's understanding of the topics covered by the new intents.
 
-Step 5: Train the model
-
-After adding new intents and testing them, train the model by clicking the "Train" button in the Dialogflow console. This will update the agent's understanding of the topics covered by the new intents.
-
-Step 6: Monitor and refine
 
 As the agent interacts with more users, monitor its performance and refine the intents as needed. Use the "View Training" feature to see which phrases are being matched to which intents, and adjust the intents and training phrases as necessary to improve accuracy.
