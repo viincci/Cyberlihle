@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cyberli-takx",
+  "private_key_id": "de2049a9596812ac574dbcf7f41df19f34956e32",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDeGLIA8YAEnTBY\nH/FftFamLyPycpIps3AvlbegXrTsjPZp3iYFmARuJczJZV5orIo1Lf1HsgNkk4id\nkyWb/pn3mzIAe8H6b09Ysai1vo61rRAfPYrRjAwPNY39peXH2uzTQTXZ8OiZilV9\nUaYkRWJ3nr5VYy4A2ezpGgHhJ0lID5PzQcxvT+RCrjpM+SNdZrAJ/OufemvuUBQX\njV2kfdN/H8yHc3DalPUr1D8F/qpdPWVqKBaGq7f2r+aT7ECY59HEg5icBUl/45S2\nlVmKwvaqOeL4XTnUNla8KWKq629RWSb50xKMurfOPa52a0vOO/GmjB69l5M+FU6N\nv6S0aHppAgMBAAECggEAAZnPN6VF+VKKOYpiZqCRwtEiatITVmBcGcW0HQBtwKo7\n8POoVcA8oPAeD6IOygWbWeqG0bRZZKlREeSwf9U4FiIs3DbIJUZV3bNrHkM9O1c/\n31/Fz0CZiicGStqeI0CDVjr5OMTNImUuPFDhOA/1d5wB7nLgbyJi/COjOZSbST0L\nEYGTXWphzuWFDi4nAGwK++MksvxGI3GJVeQ/3zapLAeww8CPc981z69VubBZJkBF\nM+9EGJLk4aV+Auo8epmRIK9CR8MWAJQ4mmaXBXEGgn+Vh7EuXJAt5JfEaR4mwoWs\n7+pmK0vJshkc6wUDZIqYV2SD3lo69HsVYlLqoKfo8QKBgQDyLENkBs/n+BiGXw6T\nxw7mKHJvWTymjFB4YIUE2h8ULUQ/FJX12+kVLCLA8dYMj7mlTlN2CwaZyl2C0ETN\nPL5rltmKPfX8yiTYJZ5ucnkzsZ2AQBRdTd5zwcayUcgcgJF2WOZISGDzV+rPFYci\nXjoIIHrm8mt3lyrjvbqMvhOWMQKBgQDqxvvEnGR/BPh/dK33zZjODRksM0mxwUkX\n7S5GhR6Ff9ycuM2Eg/f8gfOFyd9oB2kVsThlOiSiUT4Mj9UIAj4BTvzKAOsMq956\nHL+uuBFtD3UC/C8XDsFRdF8HZGrbw+BNeLTskxdQ9G3TUPDx7TPm9MTdocuty1cm\nX/Im5ObBuQKBgAeurcibirbiIO0KUO0RMIDOoaq0mv7xjo/zB+U6gifis7qIjaVJ\n/5/jUYrrYQ3u9UWwMWeaO/BfAg5nSvdzyNqi423GP2pwgzC0KM16Jiwko0lxPvQi\nxz7G0+XOQFnfHj4x3cRHP4QYsuM03J+Te6XMWfm/kPcvPXYSC7vxP6/RAoGAEIdt\n1kvEb4TkEeUfEmExLuCRMyFxQMiA4uRZ67EXkwKLf6UrIvc/kFF92Z960RIkfdh6\nRfYv+hWKLsw5jVTLFMCA35/s7Hl1Mlevzxc6ctkxvcIPdqodRiTRQ+337/z8X7ft\n1PIOJC7xRH1gWUf/7XSyH4BynIvCWPtMSxy2elECgYBmicZrV6XIvmiapH5KzPKo\nFGj/u4tYJiLeKoa0r0YMyZpcfUr2up4axaBXVYX66vTZ2ByzkqfpsnJoqTkSfSFU\n0zbPlSdyhCnAbP2PECcuguQQS5Jg2eHFtUvyGQNV+RYLSLjWzpx5zIpE23m1lc59\nLVIvZvRPrUdZGDXGawFb6A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "cyberly-cal-t1@cyberli-takx.iam.gserviceaccount.com",
+  "client_id": "103644977319336954362",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cyberly-cal-t1%40cyberli-takx.iam.gserviceaccount.com"
+}
