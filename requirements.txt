@@ -4,5 +4,4 @@ openai
 python-dotenv
 gunicorn
 pytz
-google
-googleapiclient
+--upgrade google-auth google-auth-httplib2 google-api-python-client
