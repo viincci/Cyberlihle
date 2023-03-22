@@ -54,7 +54,7 @@ class AppointmentScheduler:
                     raise Exception(f"Found duplicate event: {_event['summary']}")
             event = self.calendar_service.events().insert(calendarId=self.calendar_id, body=event).execute()
         except Exception as e:
-            #print(f"An error occurred: {e}")
+            print(f"An error occurred: {e}")
             raise Exception(f"An error occurred: {e}")
         return event
 
@@ -69,10 +69,10 @@ class AppointmentScheduler:
             self.create_calendar_event(appointment_start, appointment_end, appointment_type)
             fulfillment = f"Ok, we can fit you in for {appointment_type} at {appointment_start.strftime('%B %d, %Y at %I:%M %p')}."
         except HttpError as error:
-            #print('An error occurred: %s' % error)
+            print('An error occurred: %s' % error)
             fulfillment = f"An error occurred while scheduling the appointment. Please try again later."
         except Exception as e:
-            #print(f'An error occurred: {e}')
+            print(f'An error occurred: {e}')
             fulfillment = f"Sorry, there is already an event scheduled at {appointment_start.strftime('%B %d, %Y at %I:%M %p')}."
 
         res = {
