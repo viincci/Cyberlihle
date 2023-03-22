@@ -54,9 +54,28 @@ class AppointmentScheduler:
                     raise Exception(f"Found duplicate event: {_event['summary']}")
             event = self.calendar_service.events().insert(calendarId=self.calendar_id, body=event).execute()
         except Exception as e:
-            print(f"An error occurred: {e}")
+            #print(f"An error occurred: {e}")
             raise Exception(f"An error occurred: {e}")
         return event
+    def get_calendar_events(self):
+        events_result = self.calendar_service.events().list(
+            calendarId=self.calendar_id, alwaysIncludeEmail=False).execute()
+        gotevents = events_result.get('items', [])    
+        try:
+            _events = 'Events that are available are '
+            for _event in gotevents:
+                #print(_event)
+                time_str = _event['start']['dateTime']
+                dt = datetime.datetime.fromisoformat(time_str)
+                # Format the datetime object into a string
+                formatted_time = dt.strftime("%A, %B %d, %Y at %I:%M %p")
+                # Print the appointment information
+                _events += f"{_event['summary']} on {str(formatted_time)},  "
+            return json.dumps({'fulfillmentText': _events})
+        except Exception as e:
+            _events = "I cannot find future planned on my calander try adding appointment to be listed"
+            #print(f"An error occurred: {e}")
+            return json.dumps({'fulfillmentText': _events})
 
     def schedule_appointment(self, appointment_type, datetime):
         # Extract the date and time from the datetime string
@@ -69,10 +88,10 @@ class AppointmentScheduler:
             self.create_calendar_event(appointment_start, appointment_end, appointment_type)
             fulfillment = f"Ok, we can fit you in for {appointment_type} at {appointment_start.strftime('%B %d, %Y at %I:%M %p')}."
         except HttpError as error:
-            print('An error occurred: %s' % error)
+            #print('An error occurred: %s' % error)
             fulfillment = f"An error occurred while scheduling the appointment. Please try again later."
         except Exception as e:
-            print(f'An error occurred: {e}')
+            #print(f'An error occurred: {e}')
             fulfillment = f"Sorry, there is already an event scheduled at {appointment_start.strftime('%B %d, %Y at %I:%M %p')}."
 
         res = {
