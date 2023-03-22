@@ -19,11 +19,13 @@ cache = Cache(app, config={'CACHE_TYPE': 'simple', 'CACHE_DEFAULT_TIMEOUT': 1800
 
 class Query:
     def __init__(self, query_result):
-        self.queryText = query_result['queryText']
-        self.action = query_result['action']
-        self._datetime = query_result['parameters']['date-time']['date_time']
-        self.AppName = query_result['parameters']['name']
-        
+        try:
+            self.queryText = query_result['queryText']
+            self.action = query_result['action']
+            self._datetime = query_result['parameters']['date-time']['date_time']
+            self.AppName = query_result['parameters']['name']
+        except:
+            self.queryText = query_result['queryText']
 
 async def get_response(prompt):
     response = openai.Completion.create(
@@ -59,6 +61,9 @@ async def webhook():
         if action.action == "reminders.add":
             answer = AppointmentScheduler().schedule_appointment(appointment_type=query.AppName,datetime=query._datetime)
             return answer
+        elif action.action == "reminders.get":
+            answer = AppointmentScheduler().get_calendar_events()
+            return answer
         try:
             chat_history = cache.get(data['sessionId']) or ""
         except:
@@ -75,5 +80,4 @@ async def webhook():
 
 if __name__ == "__main__":
     app.run()
-
 
