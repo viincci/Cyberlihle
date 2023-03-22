@@ -62,7 +62,7 @@ class AppointmentScheduler:
             calendarId=self.calendar_id, alwaysIncludeEmail=False).execute()
         gotevents = events_result.get('items', [])    
         try:
-            _events = 'Events that are available are '
+            _events = 'Upcoming Planned Events are '
             for _event in gotevents:
                 #print(_event)
                 time_str = _event['start']['dateTime']
