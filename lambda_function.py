@@ -27,6 +27,7 @@ class Query:
         except:
             self.queryText = query_result['queryText']
             self.action = query_result['action']
+            self.AppName = "Unnamed Event"
 
 async def get_response(prompt):
     response = openai.Completion.create(
