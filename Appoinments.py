@@ -58,24 +58,21 @@ class AppointmentScheduler:
             raise Exception(f"An error occurred: {e}")
         return event
     def get_calendar_events(self):
+        now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
         events_result = self.calendar_service.events().list(
-            calendarId=self.calendar_id, alwaysIncludeEmail=False).execute()
-        gotevents = events_result.get('items', [])    
-        try:
-            _events = 'Upcoming Planned Events are '
-            for _event in gotevents:
-                #print(_event)
-                time_str = _event['start']['dateTime']
-                dt = datetime.datetime.fromisoformat(time_str)
-                # Format the datetime object into a string
+            calendarId=self.calendar_id, timeMin=now, singleEvents=True, orderBy='startTime').execute()
+        events = events_result.get('items', [])
+        if not events:
+            return json.dumps({'fulfillmentText': 'No upcoming events found.'})
+        else:
+            _events = 'Upcoming planned events are: '
+            for event in events:
+                start = event['start'].get('dateTime', event['start'].get('date'))
+                dt = datetime.datetime.fromisoformat(start)
                 formatted_time = dt.strftime("%A, %B %d, %Y at %I:%M %p")
-                # Print the appointment information
-                _events += f"{_event['summary']} on {str(formatted_time)},  "
+                _events += f"{event['summary']} on {formatted_time}, "
             return json.dumps({'fulfillmentText': _events})
-        except Exception as e:
-            _events = "I cannot find future planned on my calander try adding appointment to be listed"
-            #print(f"An error occurred: {e}")
-            return json.dumps({'fulfillmentText': _events})
+
 
     def schedule_appointment(self, appointment_type, datetime):
         # Extract the date and time from the datetime string
